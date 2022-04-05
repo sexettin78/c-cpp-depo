@@ -1,0 +1,195 @@
+// yorum satırı işlev görür /* */ aynı şekilde
+
+hani batchda pause komutu vardı ya ekranın kapanmamasını sağlıyordu bir tuşa basılana kadar,
+işte burada da getch() komutunu ekleyeceksin ve bunun çalışması için <conio.h> kütüphanesi
+aktif olması gerekiyor. #include <conio.h>
+
+eğer dev ++ da tr karakter göremiyorsan program başına setlocale(LC_ALL,"Turkish") kodunu yaz main
+fonksionu içerisine. ama bunu gerçekleştirebilmesi için <locale.h> kütüphanesi gerekli.
+
+printf her 2 dilde de ekrana yazı yazdırabilir. putchar('O') mesela tek bir karakter yazdırmak için.
+c de puts, c++ da ise cout<<("") ekrana çıktı aldırmak için kullanılabilir.
+
+% karakteri ile diğer ifadeler bire bir işlenir. pythondaki .format gibi düşün. %d yaptığımız zaman
+ilk değişkeni alır
+
+string = %s, float = %f, ondalıklı tam sayı = %d
+
+cout kullanımı ==== cout << "ifade 1" << "ifade 2" endl; // cout komutu <iostream> kütüphanesine ihtiyaç duyar
+ayrıca using namespace std; kodu da main fonksiyonundan önce yazdırılması gereklidir. Aksi takdirde std: :cout şeklinde kullanmak gerekir.
+
+-------------------------
+setprecision() komutu, bir kesirli sayının kaç basamağının gösterileceğini belirler. kullanım şekli:
+setprecision(basamak_sayisi);
+<iomanip> kütüphanesine ihtiyaç duyar. 
+C İÇİN KULLANIM:
+float pi = 3.1456;
+printf("Pi sayisi: %.2f", pi)
+ÇIKTI: Pi sayisi: 3.15
+burada %.2f komutu, ilk 2 basamağı alır 
+C++ İÇİN:
+float pi = 3.1456; cout << "pi sayisi:" << setprecision(3) << pi;
+ÇIKTI: pi sayisi:3.15
+AMA YUVARLAYIP ALIR
+-------------------------
+
+
+printf(" \"C++\" \n Dili \n C\\C++\' Dili"); BURADA c:\ yazdırmak için c:\\ yazdık. C++' yazdırmak içinse C++\' yazdık.
+sonuç:
+ "C++"
+ Dili
+ C\C++' Dili
+
+********************
+veri girişi için scanf komutu kullanılabilir. C++ da ek olarak cin>> komutu var
+gets = sözel ifadeyi değişkene aktarmada kullanılır
+getchar = tek karakteri okur
+getline= belirli karakter veya belirli satıra göre alır
+
+Scanf(çıkış formatı, &değişken) mesela scanf("&d",&a) gibi a değişkenini alıyor
+
+Cin komutu std ye ve iostream kütüphanesine ihtiyaç duyar. cin >> degisken 
+
+
+
+##########################################
+ŞİMDİİİ SANA NASIL TOPLAMA ÇIKARMA YAPACAĞINI VE NASIL VERİ ALACAĞINI ANLATACAĞIM
+--MANTIK--
+2 değişken alalım biri a diğeri b olsun.
+değişkenleri almak için hani bi yazı belirleyeceğiz ya ilk sayıyı gir gibi. o yazıyı ekrana yazdırıyoruz mesela
+printf("a=") diyecez ki ekranda a= desin adamda a'ya değer gireceğini anlasın. sonra scanf komutunu kullanacağız ve scanf("%d",&a) deyip a değerini alıyoruz. daha doğrusu ekrana girilen verileri a değişkenine tam sayı şeklinde aktar diyoruz
+sonrasında aynı şeyi b için de yapıyoruz ve sonucu değişkene aktarıyoruz mesela carp = a*b; gibi. istersen direk printf("Sonuç: %d", carp) diyoruz ve %d ye carp değişenini aktarıyoruz. sonra isteğe bağlı return 0; yaz pek kullanılmıyo artık bu eskiden varmış
+DEĞİŞKENE AKTARIRKEN & KULLANMAYI UNUTMA MESELA "%d",a DEĞİL "%d",&a OLACAK
+
+C İÇİN
+    int a, b, carp;
+    printf("a değerini giriniz: ");
+    scanf("%d",&a);
+    printf("b değişkenini giriniz: ");
+    scanf("%d",&b);
+    carp = a*b;
+    printf("%d*%d=%d", a, b, carp);
+
+C++ İÇİN
+   int a, b, carp;
+    cout << "A değerini giriniz: " ;
+    cin >> a;
+    cout << "B değerini giriniz: " ;
+    cin >> b;
+    carp = a*b;
+    cout << a << "*" << b << "=" << carp << endl;
+##########################################
+
+itoa fonksiyonu, int sayı tipindeki sayıyı sayı tabanında gösterilen sistemlerden istenilene dönüştürerek kullanılabilir 
+itoa<insayi, strdegisken, sayi taban>
+ATOİ FONKSİYONU İSE İTOA TAM TERSİ
+
+pow(2,3) dersen bu 2 üssü 3 anlamına gelir ve math.h kütüphanesine ihtiyaç duyar
+
+if(a == 0) {
+	printf("A değeri 0'a eşit ")
+}
+
+karmaşık sayı tanımlama şekli: Veritipi _complex degiskenadı;
+
+******************
+Onluk sayı sisteminde ön takı yoktur
+binary(ikili) sayı sisteminde, 0b ön takısı,
+Octal(Sekizli) sayı sisteminde, 0 ön takısı,
+Hexadecimal(Onaltılık) sayı sisteminde, 0x ön takısı kullanılır
+******************
+
+mesela biz phpde header veya footer kısmını her dosyaya tek tek yazmamak için veya bir hata olunca hepsinden değiştirmek yerine tek bir dosyaya bağlayıp o dosyadan değiştirmeyi seçiyoruz ya, işte burada da mesela carp diye bir dosyamız olsun.
+bu dosyayı carp.h şeklinde kaydediyoruz ve entegre etmek istediğimiz dosyanın başına #include "carp.h" şeklinde ekliyoruz.
+
+00000000000000000000000000000000000000000000000000
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+	
+}
+
+11111111111111111111111111111111111111111111111111
+
+#include <iostream>
+#include <iomanip>
+#include <conio.h>
+using namespace std;
+int main() {
+	
+}
+
+000000000000000000000000000000000000000000000000000
+
+
+c++ dilinde swap adlı komut, değişkenler arası yer değiştirme işlemi uygulamak içindir. <bits/stdc++.h> kütüphanesini gerektirir.
+char Ali = 'malikane';
+char Veli = 'hastane';
+burada ali malikanede, veli hastanedeyken;
+swap(Ali, Veli); yazılınca Ali hastanede, Veli malikanede olacaktır.
+
+
+tek bir karakteri ifade etmek için char veri tipi kullanılırken birden fazla karakterlik verileri almada c++'da string, c da char kullanılır.
+char, short, int ve long veri tipleri tam sayıları ifade etmede kullanılır.
+float ve double veri tipleri kesirli sayıları ifade etmede kullanılır
+
+
+Veri tiplerinin limitini öğrenmek için <limits.h> kütüphanesini entegre etmemiz gerekir. Entegre ettikten sonra (CHAR_MIN, INT_MAX) eklerini getirerek öğrenebiliriz. 
+printf("int deger araligi: %d ile %d", INT_MIN, INT_MAX) yaptığımız zaman ekran çıktısı:
+int deger araligi: -2147483648 ile +2147483647
+
+gerçel/kesirli veri tiplerinin değer aralığını elde etmek için #include <float.h> entegre etmek gereklidir
+
+c'de bool veri tipi işlem yapmak için <stdbool.h> entegre etmek gerekli
+
+(donusturulecekveritipi) degiskenadi; (int) (4.3); gibi. Burada sayı 4 olacaktır. int olduktan sonra kesri alınmaz.
+
+#define, sabit fonksiyon tanımlamada da kullanılan yetenekli bir önişlemci komutudur. define komutundan sonra komut satırı ; ile sonlanmaz. C++ İÇİN
+const, sabit değişken aktarmada kullanılır. Derleyiciye programcının bunu değiştirmesini önlemesini söyler. C İÇİN
+float const pi = 3.14; değerinin c++ da eş değeri, #define pi 3.14
+
+enum, tam sayı tipindeki sembolik sabitler de diyebiliriz. 
+enum sabit_ismi {a, b, c, d, e, ...};
+0'dan başlayıp sırasıyla artan bir şekilde değer alır.
+mesela enum diller {c, c++, python, html, css};
+yazdıktan sonra; cout << c Yazarsak ekranda 0 görünecek ama cout << c++ dersek 1 değeri görünecek
+aynı şeyi printf("%d", c) yazdığımız zaman da görebiliriz. 0 değerini ekrana yazdıracak
+
+bir karakterin ASCII karşılığını almak için, c++ da = aldığımız char değerini int olarak göster dersek ekranda ascii karşılığı gelir. Mesela s yazdığımız an 83 değeri ekranda görünecek. C de ise scanf de ilk olarak veri tipi belirtiyoruz ya, o veri tipini "%c" olarak al
+örneğin: scanf("%c", &a) gibi.
+
+bölme işleminde kalanı(mod) göstermek için % kullanılır. mesela 9 % 4 yaparsak 1 kalacağı için ekranda 1 sayısı görünecektir.
+
+sözel ifadeleri birleştirmek için c de strcat kullanılır. 
+char a [10] = "merhaba";
+char b [10] = "dünya";
+strcat(a, b)
+printf("%s", a);
+Ekran çıktısı: merhabadünya
+
+pow(x,y) //x sayısının y'inci kuvvetini verir. x sayısı double türünde olmalıdır.
+sqrt(x) //x sayısının karekökünü alır. x sayısı double türünde olmalıdır.
+
+ikili karşılaştırma yaparken (koşul) ? işlem1 : işlem2 kullanılır. koşul doğru ise işlem1 değilse işlem2 yapılacaktır. Örneğin printf(a<0 ? "negatif":"pozitif"); burada eğer a sayısı 0 dan küçükse negatif, değilse ekranda pozitif yazacaktır.
+ayrıca iki sayıdan büyük olan ve küçük olanı yazdırmak için min(a, b) max(a, b) kullanılabilir. Mesela min(32, 54) yazılırsa 32 sonucu ekranda yazacaktır.
+
+&& operatörü ve anlamına gelir. ifadelerin her ikisi de doğruysa 1, aksi ise 0 değerini alır.
+|| operatörü veya anlamına gelir. herhangi birinin doğru olması halinde 1, aksi takdirde 0 sonucunu üretir.
+^ operatörü bu operatörde verilen iki değerden herhangi biri diğerinden farklı ise 1, aksi takdirde 0 sonucunu üretir.
+! operatörü değil anlamına gelir. ifade doğru ise 0, yanlış ise 1 sonucunu üretir.
+
+***********************************
+switch() == kullanmak istediğin değişkeni switch içerisine al. Mesela yaşın üzerinde işlem yapılacak diyelim. burada switch(yas) {} yazıyoruz ve case koşullarımızı süslü parantez içerisine yazıyoruz.
+case == koşulu sağlayan ifadedir. mesela yaş adlı bir veri alalım 0 ve 2 arasında (bu sayılar da dahil) olursa ekranda bebeklik yazsın
+	
+	switch (yas){ //Burada yaş değişkeni üzerinde işlem yapacağımızı belirttik
+	case 0 ... 2: // burada eğer 0 ve 2 arasında değer alırsa dedik
+	cout << "bebeklik"; break;} //burada da ekrana bebeklik yaz dedik yani yapacağı işlemi söyledi ve break ile döngünün bitmesini sağladık.
+		
+
+default: {}   == bu koşul eğerki hiçbir şeye uymuyorsa mesela yaş hesapta adam yazı tipinde bir veri girdi diyelim. O zaman kullanılır örnek: default:cout << "Yanlış veri girişi";
+
+***********************************
+
+isdigit() = 0-9 arası sayı mı diye kontrol etmek için
