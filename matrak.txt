@@ -214,4 +214,36 @@ while(a<10) {a++; t+=a; if(a==2) break;} kodunda a değişkenini 1 aldıktan son
 
 continue = döngü içerisinde o anki işlemin atlanmasını ve bir sonraki işlemden devam edilmesini sağlar. mesela 1'den 5 e kadar sayıları yazdırdığımız bir programda if(a==2 || a==4) continue; yazarsak ekranda 1 3 ve 5 değerleri görünecektir.
 ***********************************
+for(veritipi degiskenadı : diziadı)
+foreach c de yok. cpp de var.
+foreach kullanım örneği: int dizi[] = { 10, 20, 30, 40 }; for (int x : dizi) cout << x << endl;
+
+SONSUZ DÖNGÜ UYGULAMAK İÇİN while(true) {işlem} veya while(1) {işlem} veya for(;;) {işlem} kullanabilirsin. 
+
+#####################################
+fonksiyon tanımlama örneği: void fonksiyon() {yapilacaklar}
+
+\\\\\\\\\\\\\\\\\\random sayılar\\\\\\\\\\\\\\
+rand() fonksiyonu, rastgele sayı üretimi için kullanılır. 0 ile randmax arasında sayı üretir.
+C' de stdlib.h kütüphanesi, C++'da cstdlib kütüphanesi kullanılır.
+int sayi = rand()%10; ========>>> 0-10 arası rastgele sayı üretir
+time() fonksiyonu 1 ocak 1970 00.00'dan bu ana kadarki toplam saniye değerini döndürür. C de time.h, C++ da ctime kütüphanesi gerektirir.
+
+
+HER ÇALIŞMADA FARKLI SAYI ÜRETSİN DİYORSAN 
+srand((int) time(0));
+bunu ekle. yukarıda time fonksiyonu için verdiğim kütüphanelere ihtiyaç duyar.
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+C/C++ Dizi tanımlanırken 
+Tip diziad [Element Sayısı];
+Tip diziad [] = {deger1,deger2...}
+
+karakter dizisi örneği;
+char A[] = "ali";
+char A[] = {'a', 'l', 'i', '\0'};
+
+dizi elemanlarını başka diziye kopyalamak;
+int A[] = {1,2,3,4,5,6,7};
+int B[] = A;
+
 
