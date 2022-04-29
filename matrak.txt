@@ -247,3 +247,104 @@ int A[] = {1,2,3,4,5,6,7};
 int B[] = A;
 
 
+2 boyutlu dizi tanımlama: tip Dizi_adi [satir_boyutu] [sutun_boyutu]
+
+
+--------------HATA YAKALAMA------------
+C DE YOK CPP DE VAR!!!!!!!!
+try{
+normal program kodları buraya yazılır
+komut satırları
+koşul <throw> istisna
+}
+
+catcha(...) {
+bir çalışma zamanı hatası üretecek olursa işlemler buraya yazılır.
+}
+
+---------------------------------------
+
+Assert = ileri sürmek, iddia etmek. #include <assert.h> veya <cassert> gerektirir. 
+assert <koşul>; Koşul geçersiz ise assertion failed istisnası tetiklenir ve program sonlandırılır.
+eğer assert geçersiz kılınmak istenirse, #define NDEBUG komut satırı kullanılır. bu komut satırı, <assert.h>'den önce yazılmalıdır.
+
+bir değişkenin adresini öğrenmek için: printf("%d",degisken) yazmak yerine printf("%d",&degisken) yazman yeterli
+pointer operatorü olarak * simgesi kullanılır
+veriTipi *pointerDegisken;
+pointer'e 0 atamak için int *pr; pr = NULL;
+printf komutu ile birlikte pointer değişkeninin içeriğini veya adresini elde etmek için %p karakteri kullanılır.
+pointer işaretçisi tanımlama: veritipi **pointerIsmi;
+
+aynı değişkenlerde olduğu gibi bir fonksiyona da ismi yerine adresi belirtilerek erişilebilir. Bu durumda fonksiyon işaretçileri kullanılır. Kullanım şekli:
+<geriye dönüş tipi> (* pointer ismi) ([parametre tipleri])
+int (*pr) (void); int (*pr) (int,int); gibi.
+
+esasen bir dizi adı, o dizinin ilk elemanını tutan/saklayan bir tür işaretçidir. Dolayısıyla int a[10] ile int *a; aynı şeydir. Örneğin bir a dizisinin 3.elemanına 5 değerini aktarmak için,
+a[3]=5; veya *(a+3)=5; ifadeleri kullanılabilir.
+
+*************************DOSYA İŞLEMLERİ*************************
+dosya değişkeni tanımlamak için işaretçiler kullanılır. === FILE *dosyaadi*;
+dosya açılımı için fopen(), dosyanın kapatılması için ise fclose() fonksiyonu kullanılır.
+
+FILE *dosya;
+dosya=fopen(const char dosya_adi,const char acma_amacimiz);
+dosya işlemleri
+fclose(dosya);
+
+fprintf/fputs === dosyaya veri yazar. kullanım şekli= fputs("furkan",fp); fprintf(fp,"furkan");
+fgetc = dosyadan bir karakter okur. kullanım şekli: karakter=fgetc(dosya);
+fputc = dosyaya bir karakter yazar. Kullanım şekli: fputc(karakter,dosya); 
+fputc(fgetc(dosya1),dosya2) = dosya kopyalama işleminde dosya1'in sonuna gelene kadar tüm kayıtları karakter karakter dosya2'ye yazar
+feof(dosyaadi) = dosya sonuna gelinip gelinmediğini kontrol eder. 1 ve 0 değerlerini döndürür
+rename() = dosya adını değiştirir. kullanım şekli: rename("eski.txt","ywni.txt");
+remove() = dosya siler. kullanım şekli: remove("dosya.txt");
+unlink() = dosya siler. kullanım şekli: unlink("dosya.txt");
+
+
+
+Bu kod ile dosyanın içeriği ekrana yazdırılabilir:
+  while(! feof(dosya) ){
+    putchar(fgetc(dosya));}
+
+*****************************************************************
+
+
+-------------------------NESNE YÖNELİMLİ PROGRAMLAMA(ONLY CPP)--------------------
+metot tanımlamak/çağırmak için:
+Nesne_adi. Metot_Adi()
+
+Nesne türetme:
+Sınıf_Adi nesne_adi ======== Araba kamyon;
+Sınıf_Adi *nesne_adi=new Sınıf_Adi(); ============== Araba *kamyon= new Araba();
+
+bir kamyon nesnesinin özelliklerini, belirtilen değişkenlere değer atayarak tanımlayabiliriz.
+kamyon.kapasite = 4000;
+kamyon.renk = "kırmızı";
+gibi.
+
+
+MİRAS MANTIĞI
+class altSınıf:erişimtürü üstSınıf{...};
+
+ÖRNEK:
+class Arac{}; //üst sınıf
+class kamyon : public arac{}; //alt sınıf
+class taxi : public arac{}; //alt sınıf
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Soyut sınıf tanımı:
+en az bir  saf sanal fonksiyon içeren sınıfa soyut sınıf denir. virtual ifadesi gereklidir.
+virtual tip fonksiyonismi () = 0;
+ 
+örnek tanımlar:
+class soyutsinif{
+virtual int fonksiyonAD()=0};
+
+
+Sanal fonksiyon tanımlama
+public:
+virtual veritipi fonksiyonad(veritipi)=0;
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
