@@ -1,3 +1,3 @@
 # c-cpp-depo
 ###### Sexettin'in c/c++ deposu
-### notlar için matrax.txt dosyasına bakabilirsiniz.
+### notlar için matrak.txt dosyasına bakabilirsiniz.
